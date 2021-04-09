@@ -16,9 +16,9 @@
   --line-height: 1.618;
 
   /* Default (light) theme */
-  --bg: #FFF;
+  --bg: #f4f4f4;
   --accent-bg: #F5F7FF;
-  --text: #000039;
+  --text: #000035;
   --text-light: #585858;
   --border: #D8DAE1;
   --accent: #0D47A1;
@@ -169,7 +169,7 @@ h6 {
 /* Format links & buttons */
 a,
 a:visited {
-  color: #00F;
+  color: #0D47A1;
 }
 
 a:hover {
