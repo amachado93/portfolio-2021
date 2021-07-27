@@ -13,13 +13,16 @@
   --linkHover: #7d7abc;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 html,
 body {
   background-color: var(--mainBg);
-}
-
-body {
-  margin: 35px 25px;
+  margin: 0;
 }
 
 h1,
@@ -48,6 +51,113 @@ a {
   color: var(--link);
 }
 
+/* start navigation styles */
+header {
+  background: var(--mainBg);
+  text-align: center;
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+}
+
+.nav-toggle {
+  display: none;
+}
+
+.nav-toggle-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 80%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.nav-toggle-label span {
+  display: block;
+  background: var(--text);
+  height: 4px;
+  width: 1.75em;
+  border-radius: 2px;
+  position: relative;
+  z-index: 1;
+  transform-origin: 4px 0px;
+
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+    background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+}
+
+.nav-toggle-label span:first-child {
+  top: 25px;
+  transform-origin: 0% 0%;
+}
+
+.nav-toggle-label span:nth-child(2) {
+  top: 40px;
+  right: 1.75em;
+  /* right: 2em; */
+  transform-origin: 0% 100%;
+}
+
+nav {
+  position: absolute;
+  text-align: left;
+  top: 100%;
+  right: 0;
+  background-color: #015a2b;
+  width: 60%;
+  height: 50vh;
+  transform: scale(1, 0);
+  transform-origin: right top;
+  transition: transform 400ms ease-in-out;
+}
+
+nav ul {
+  font-family: var(--sans-font);
+  margin-top: 5rem;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  margin-bottom: 1em;
+  margin-left: 1em;
+}
+
+nav a {
+  color: var(--mainBg);
+  text-decoration: none;
+  font-size: 1.2rem;
+  opacity: 0;
+  transition: opacity 150ms ease-in-out;
+}
+
+.nav-toggle:checked ~ nav {
+  transform: scale(1, 1);
+}
+
+.nav-toggle:checked ~ nav a {
+  opacity: 1;
+  transition: opacity 250ms ease-in-out 250ms;
+}
+
+.nav-toggle:checked ~ label span:first-child {
+  opacity: 1;
+  transform: rotate(38deg) translate(-2px, -1px);
+  background: var(--mainBg);
+}
+
+.nav-toggle:checked ~ label span:nth-child(2) {
+  opacity: 1;
+  transform: rotate(-38deg) translate(0, -1px);
+  background: var(--mainBg);
+}
+
+/* end Navigation styling */
+
+/* start body style */
+
 h1 {
   font-size: 2.25rem;
 }
@@ -73,10 +183,6 @@ p {
   display: none;
 }
 
-.intro {
-  margin: 50px 0 25px 0;
-}
-
 .intro h1 {
   margin-bottom: 30px;
 }
@@ -92,6 +198,8 @@ section {
 .projects {
   margin: 30px 0;
 }
+
+/* end body style */
 
 /* desktop styling */
 @media (min-width: 800px) {
