@@ -60,6 +60,10 @@ header {
   width: 100%;
 }
 
+.logos {
+  display: none;
+}
+
 .nav-toggle {
   display: none;
 }
@@ -159,15 +163,15 @@ nav a {
 /* start body style */
 
 h1 {
-  font-size: 2.25rem;
+  font-size: 2.5rem;
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 2.25rem;
 }
 
 h3 {
-  font-size: 1.75rem;
+  font-size: 2rem;
 }
 
 h3 a {
@@ -179,24 +183,22 @@ p {
   font-family: var(--sans-font);
 }
 
-.logos {
-  display: none;
+.intro,
+.projects {
+  margin: 0 0.5rem 1rem 0.5rem;
+  padding: 1.5rem 0.75rem;
 }
 
-.intro h1 {
-  margin-bottom: 30px;
-}
-
-.intro p {
-  margin: 30px 0px;
+section > * + * {
+  margin-top: 1.5rem;
 }
 
 section {
   border-bottom: var(--link) 2px solid;
 }
 
-.projects {
-  margin: 30px 0;
+.project > * + * {
+  margin-top: 1.5rem;
 }
 
 /* end body style */
