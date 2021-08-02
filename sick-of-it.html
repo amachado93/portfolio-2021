@@ -36,7 +36,35 @@
         <img src="./assets/sick-of-it/app-default-view.png" alt="project detail image">
         <img src="./assets/sick-of-it/app-select-state.png" alt="project detail image">
         <img src="./assets/sick-of-it/app-songs-loaded.png" alt="project detail image">
-        <p>Here is a description of the project...</p>
+        
+        <h3>Problem space</h3>
+
+        <p>Indecisive audiophiles rejoice.  <strong>Sick of It</strong> aims to combat decision fatigue when looking for new music to listen to.</p>  
+            
+        <p>The app asks the user to select a color and emoji that resonates with them at that particular moment.</p>
+            
+        <p><strong>Sick of It</strong> uses those data points to synthesize a playlist through Spotify's API.</p>
+
+        <h3>Tech used</h3>
+
+        <p><strong>Sick of It</strong> uses React for the frontend along with Axios to make calls to Spotify's API.</p>
+
+        <h3>Pain points</h3>
+
+        <p>Spotify's API can be a bit finicky and initially the oauth workflow posed a few issues.  However after building the correct GET and POST methods, I was able to completely solve for those problems.</p>
+
+        <p>The next biggest hurdle in getting <strong>Sick of It</strong> built was making a scoring algorithm to take the user's input and translate it into endpoints that could be used to make an API call to Spotify.</p>
+            
+        <p>I am ultimately happy with the result, but there are a few improvements that could be made to the algorithm to yield better results from the query.</p>
+
+        <h3>Next iteration</h3>
+
+        <ul>
+            <li>Refactor to make UI mobile-friendly</li>
+            <li>Tweak algorithm for better API requests and better playlist results</li>
+        </ul>
+
+
     </section>
 </body>
 </html>
