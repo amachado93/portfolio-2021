@@ -1,5 +1,39 @@
-* {
+:root {
+  /* Set fonts */
+  --serif-font: "Lora", "Times New Roman", serif;
+  --sans-font: Roboto, Noto, "Segoe UI", Arial, Helvetica, "Helvetica Neue",
+    sans-serif;
+  --mono-font: Consolas, Menlo, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+
+  /* Set colors */
+  --mainBg: #f4f6f7;
+  --text: #393939;
+  --link: #009c49;
+  --linkHover: #7d7abc;
+  --dkGreen: #015a2b;
+}
+
+/* global styles */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
   -ms-overflow-style: none;
+}
+
+html,
+body {
+  background-color: var(--dkGreen);
+}
+
+h1,
+h2,
+h3,
+p,
+ul,
+li {
+  color: var(--mainBg);
 }
 
 ol,
@@ -7,6 +41,30 @@ li {
   list-style: none;
   margin: 0;
   padding: 0;
+  font-family: var(--sans-font);
+  font-size: 1.25rem;
+}
+
+/* end global styles */
+
+.nav-toggle-label span {
+  background: var(--mainBg);
+}
+
+nav {
+  background-color: var(--mainBg);
+}
+
+nav a {
+  color: var(--text);
+}
+
+.nav-toggle:checked ~ label span:first-child {
+  background: var(--text);
+}
+
+.nav-toggle:checked ~ label span:nth-child(2) {
+  background: var(--text);
 }
 
 /* start carousel styling */
@@ -16,6 +74,7 @@ li {
   padding-top: 75%;
   filter: drop-shadow(0 0 10px #0003);
   perspective: 100px;
+  border: none;
 }
 
 .carousel__viewport {
@@ -26,7 +85,6 @@ li {
   left: 0;
   display: flex;
   overflow-x: scroll;
-  /* counter-reset: item; */
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
 }
@@ -159,3 +217,40 @@ li {
 /* end carousel */
 
 /* start content styling */
+
+main {
+  margin: 0 0.5rem 1rem 0.5rem;
+  padding: 1.5rem 0.75rem;
+}
+
+main > * + * {
+  margin-top: 1.5rem;
+}
+
+.project-writeup > * + * {
+  margin-top: 1.5rem;
+}
+
+#classic-ul {
+  display: block;
+  list-style: disc;
+  margin: 1em 0;
+  padding: 0 0 0 40px;
+}
+
+#classic-ul > * + * {
+  margin-top: 0.5rem;
+}
+
+#classic-ul li::before {
+  content: "\2022";
+  color: var(--mainBg);
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+code {
+  background-color: var(--text);
+  color: orange;
+}
