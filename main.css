@@ -26,6 +26,11 @@ body {
   margin: 0;
 }
 
+body {
+  border: var(--dkGreen) 1rem solid;
+  height: 100vh;
+}
+
 h1,
 h2,
 h3,
@@ -59,10 +64,6 @@ header {
   position: fixed;
   z-index: 999;
   width: 100%;
-}
-
-.logos {
-  display: none;
 }
 
 .nav-toggle {
@@ -184,14 +185,21 @@ p {
   font-family: var(--sans-font);
 }
 
-.intro,
-.projects {
+main {
   margin: 0 0.5rem 1rem 0.5rem;
   padding: 1.5rem 0.75rem;
 }
 
+main > * + * {
+  margin-top: 1.5rem;
+}
+
 section > * + * {
   margin-top: 1.5rem;
+}
+
+.intro {
+  padding-bottom: 1.5rem;
 }
 
 section {
@@ -204,77 +212,21 @@ section {
 
 /* end body style */
 
+/* end mobile style */
+
 /* desktop styling */
 @media (min-width: 800px) {
-  html,
   body {
-    height: 90%;
-  }
-  /* Fade in */
-  h3 > a,
-  p > a {
-    padding: 0.2em 0;
-    display: block;
-    position: relative;
-    width: max-content;
-  }
-  a::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 0.1em;
-    background-color: hotpink;
-    opacity: 0;
-    transition: opacity 300ms, transform 300ms;
-  }
-
-  a:hover::after,
-  a:focus::after {
-    opacity: 1;
-    transform: translate3d(0, 0.2em, 0);
-  }
-
-  img {
-    width: 35px;
-    height: 35px;
-  }
-
-  p {
-    font-size: 25px;
-    line-height: 30px;
-  }
-
-  .main {
-    border: var(--text) 2px solid;
-    border-radius: 90px;
-    margin: 2em;
-    padding: 2.5em 5em;
-    height: 100%;
-  }
-
-  header {
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: column;
     align-items: center;
+    align-content: flex-start;
+    /* justify-self: unset; */
   }
 
-  .logos {
-    display: block;
-  }
-
-  header p {
-    padding-left: 1em;
-    border-left: var(--text) 1px solid;
-  }
-
-  header ul {
-    padding-right: 1em;
-  }
-
-  ul > li {
-    display: inline;
+  main {
+    margin: 0 auto;
+    width: 66%;
   }
 
   h1 {
@@ -292,22 +244,34 @@ section {
     font-size: 28px;
   }
 
-  .projects {
+  p {
+    font-size: 25px;
+  }
+
+  header {
+    all: unset;
+    width: 66%;
+  }
+
+  .nav-toggle-label {
+    display: none;
+  }
+
+  nav {
+    all: unset;
+    width: 100%;
+  }
+
+  nav ul {
+    margin: 0;
+    width: 66%;
     display: flex;
     justify-content: space-between;
-    width: 90%;
+    align-items: center;
   }
 
-  .project {
-    border: var(--text) 2px solid;
-
-    border-radius: 90px;
-    padding: 1.25em 2.15em;
-    width: 25em;
-  }
-
-  .project p,
-  h3 {
-    font-size: 20px;
+  nav a {
+    opacity: 1;
+    color: var(--text);
   }
 }

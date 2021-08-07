@@ -47,6 +47,8 @@ li {
 
 /* end global styles */
 
+/* start nav styles */
+
 .nav-toggle-label span {
   background: var(--mainBg);
 }
@@ -67,7 +69,9 @@ nav a {
   background: var(--text);
 }
 
-/* start carousel styling */
+/* end nav styles */
+
+/* start carousel styles */
 
 .carousel {
   position: relative;
@@ -214,9 +218,9 @@ nav a {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='100,50 20,100 20,0' fill='%23fff'/%3E%3C/svg%3E");
 }
 
-/* end carousel */
+/* end carousel styles */
 
-/* start content styling */
+/* start content styles */
 
 main {
   margin: 0 0.5rem 1rem 0.5rem;
