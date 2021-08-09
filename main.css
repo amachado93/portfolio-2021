@@ -27,7 +27,7 @@ body {
 }
 
 body {
-  border: var(--dkGreen) 1rem solid;
+  border: var(--link) 1rem solid;
   height: 100vh;
 }
 
